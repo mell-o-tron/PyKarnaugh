@@ -1,18 +1,22 @@
 from karnaugh import simplify
 
-
-#arity = 3
-#expression = lambda a, b, c : not (a or (a and b)) and c
-
-#arity = 2
-#expression = lambda a, b : (not a and b) or (not a and b)
-
-#arity = 3
-#expression = lambda a, b, c : (not a and b and not c) or (not a and b and c) or (a and not b and not c) or (a and not b and c)
-
-
+print("Half adder:")
 arity = 2
-expression = lambda a,b : (a and b)
+out = lambda a, b : 1 if a + b == 1 else 0
+remainder = lambda a, b : 1 if a + b == 2 else 0
 
 
-print(simplify(expression, arity))
+print("output:")
+print(simplify(out, arity))
+print("remainder:")
+print(simplify(remainder, arity))
+
+print("Full adder:")
+arity = 3
+out = lambda a, b, c : 1 if (a + b + c == 1) or (a + b + c == 3) else 0
+remainder = lambda a, b, c : 1 if a + b + c >= 2 else 0
+
+print("output:")
+print(simplify(out, arity))
+print("remainder:")
+print(simplify(remainder, arity))
