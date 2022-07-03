@@ -3,7 +3,7 @@ Boolean algebra simplifier based on n-dimensional k-maps
 
 ## Usage
 
-Define a boolean function in python, e.g. `lambda a, b, c : not (a or (a and b)) and c`, and pass it, along with its *arity* (that is, the number of its parameters) to the `simplify` function, which will return a string containing the result of the simplification, in disjunctive normal form.
+Define a boolean function ( $\\{ 0,1 \\} ^n \to \\{ 0,1 \\}$ ) in python, e.g. `lambda a, b, c : not (a or (a and b)) and c`, and pass it, along with its *arity* $n$ (that is, the number of its parameters) to the `simplify` function, which will return a string containing the result of the simplification, in disjunctive normal form.
 
 ## Examples
 `k_user.py` contains two examples: the half and full adder. As a simple usage example, here is the full adder (`c` is the input remainder):
